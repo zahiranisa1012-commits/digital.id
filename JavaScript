@@ -1,0 +1,66 @@
+// script.js
+
+function scrollToProduk(){
+  document.getElementById("produk").scrollIntoView({
+    behavior:"smooth"
+  });
+}
+
+let keranjang = [];
+
+function beliProduk(nama, harga){
+  keranjang.push({
+    nama:nama,
+    harga:harga
+  });
+
+  tampilKeranjang();
+
+  alert(nama + " berhasil dimasukkan ke keranjang!");
+}
+
+function tampilKeranjang(){
+  let list = document.getElementById("listKeranjang");
+
+  list.innerHTML = "";
+
+  keranjang.forEach((item)=>{
+    let li = document.createElement("li");
+    li.innerHTML = `${item.nama} - Rp ${item.harga.toLocaleString()}`;
+    list.appendChild(li);
+  });
+}
+
+document.getElementById("formPesanan")
+.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let nama = document.getElementById("nama").value;
+  let alamat = document.getElementById("alamat").value;
+  let produk = document.getElementById("produkInput").value;
+  let jumlah = document.getElementById("jumlah").value;
+
+  document.getElementById("hasilPesanan").innerHTML = `
+    <h3>Data Pesanan</h3>
+    <p><b>Nama:</b> ${nama}</p>
+    <p><b>Alamat:</b> ${alamat}</p>
+    <p><b>Produk:</b> ${produk}</p>
+    <p><b>Jumlah:</b> ${jumlah}</p>
+  `;
+});
+
+document.getElementById("formKontak")
+.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let nama = document.getElementById("namaKontak").value;
+  let email = document.getElementById("emailKontak").value;
+  let pesan = document.getElementById("pesanKontak").value;
+
+  document.getElementById("hasilKontak").innerHTML = `
+    <h3>Hasil Input Kontak</h3>
+    <p><b>Nama:</b> ${nama}</p>
+    <p><b>Email:</b> ${email}</p>
+    <p><b>Pesan:</b> ${pesan}</p>
+  `;
+});
