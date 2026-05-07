@@ -1,0 +1,167 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright Digital Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>Bright Digital Store</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li><a href="#keranjang">Keranjang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h2>Produk Usaha Digital Modern</h2>
+      <p>
+        Website ini digunakan untuk menampilkan informasi usaha digital
+        yang sedang berkembang dengan tampilan menarik dan modern.
+      </p>
+      <button onclick="scrollToProduk()">Lihat Produk</button>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>Tentang Usaha</h2>
+
+    <div class="about-box">
+      <h3>Nama Usaha</h3>
+      <p>Bright Digital Store</p>
+    </div>
+
+    <div class="about-box">
+      <h3>Latar Belakang</h3>
+      <p>
+        Bright Digital Store dibuat untuk membantu masyarakat mendapatkan
+        produk digital dan perlengkapan modern dengan mudah, cepat,
+        dan terpercaya secara online.
+      </p>
+    </div>
+
+    <div class="about-box">
+      <h3>Visi & Misi</h3>
+      <p>
+        <b>Visi:</b> Menjadi usaha digital terpercaya dan kreatif di Indonesia.
+      </p>
+      <p>
+        <b>Misi:</b>
+      </p>
+      <ul>
+        <li>Menyediakan produk berkualitas</li>
+        <li>Memberikan pelayanan terbaik</li>
+        <li>Mengembangkan bisnis digital modern</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRODUK -->
+  <section id="produk" class="produk">
+    <h2>Produk Kami</h2>
+
+    <div class="produk-container">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="">
+        <h3>Smartphone</h3>
+        <p>HP modern dengan kamera jernih dan performa cepat.</p>
+        <h4>Rp 3.500.000</h4>
+        <button onclick="beliProduk('Smartphone',3500000)">Beli</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8" alt="">
+        <h3>Laptop</h3>
+        <p>Laptop ringan cocok untuk sekolah dan kerja.</p>
+        <h4>Rp 7.000.000</h4>
+        <button onclick="beliProduk('Laptop',7000000)">Beli</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="">
+        <h3>Headset Gaming</h3>
+        <p>Suara jernih dan nyaman dipakai bermain game.</p>
+        <h4>Rp 450.000</h4>
+        <button onclick="beliProduk('Headset Gaming',450000)">Beli</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="">
+        <h3>Smartwatch</h3>
+        <p>Jam tangan pintar dengan fitur kesehatan modern.</p>
+        <h4>Rp 850.000</h4>
+        <button onclick="beliProduk('Smartwatch',850000)">Beli</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad" alt="">
+        <h3>Speaker Bluetooth</h3>
+        <p>Speaker portable dengan suara bass kuat.</p>
+        <h4>Rp 600.000</h4>
+        <button onclick="beliProduk('Speaker Bluetooth',600000)">Beli</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FORM PEMBELIAN -->
+  <section class="pesanan">
+    <h2>Form Pemesanan</h2>
+
+    <form id="formPesanan">
+      <input type="text" id="nama" placeholder="Nama Pembeli" required>
+      <input type="text" id="alamat" placeholder="Alamat" required>
+      <input type="text" id="produkInput" placeholder="Produk" required>
+      <input type="number" id="jumlah" placeholder="Jumlah" required>
+      <button type="submit">Kirim Pesanan</button>
+    </form>
+
+    <div id="hasilPesanan"></div>
+  </section>
+
+  <!-- KERANJANG -->
+  <section id="keranjang" class="keranjang">
+    <h2>Keranjang Belanja</h2>
+    <ul id="listKeranjang"></ul>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="kontak">
+    <h2>Kontak Kami</h2>
+
+    <form id="formKontak">
+      <input type="text" id="namaKontak" placeholder="Nama" required>
+      <input type="email" id="emailKontak" placeholder="Email" required>
+      <textarea id="pesanKontak" placeholder="Pesan"></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+
+    <div id="hasilKontak"></div>
+
+    <div class="admin">
+      <h3>Admin</h3>
+      <p>WhatsApp: 0812-3456-7890</p>
+      <p>Email: brightdigital@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Bright Digital Store</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
